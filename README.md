@@ -25,3 +25,8 @@ Here is a sample interactive plot created with the word "up".  The program scans
 When you hover over each point in the interactive plot, you will get information (Such as the sentence each word vector came from).  As you can see, when using BERT, the same word can have different vectors depending on the context.
 
 Interestingly, the emeddings of words used in a similar context lie near eachother.  Additionally, when used in different context, the word vectors are far apart.  For example, the plot below contains 4 distinct groups, each group representing distinct contexts of the word "up".
+
+
+Image of a sample plot created with this program.  Notive how a pop up with information about the point appears when the cursor hovers over a point.
+
+!["Image of an interative plot created with this program.  Notive how a pop up with information about the point appears when the cursor hovers over the point."](/sample_interactive_plot_image.png)
