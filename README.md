@@ -12,11 +12,11 @@ pip install pandas
 
 ### Included Files
 
-TestEmbeddings.py contains a function to scan a dataset for sentences containing a specific word, then return the BERT word vectors for the specified word in each sentence.
+"UmapBert.py" contains the fuction to create the interactive plot given the word embeddings and the sentences.
 
-UmapBert.py contains the fuction to create the interactive plot given the word embeddings and the sentences.
+"TestEmbeddings.py" contains a helper function to scan a dataset for sentences containing a specific word, then return the BERT word vectors for the specified word in each sentence.
 
-in_domain_train.tsv is the datset used for this example.  It contains the CoLA dataset.
+"in_domain_train.tsv" is the datset used for this example.  It contains the CoLA dataset.
 
 ## Sample Output
 
