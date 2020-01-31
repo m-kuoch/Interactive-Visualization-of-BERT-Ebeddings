@@ -1,6 +1,6 @@
 # Interactive Visualization of BERT Embeddings
 
-This creates interactive plots of BERT word embeddings using PyTorch.  Utilizing UMAP dimension reduction, the high dimension word vectors created with BERT can be visualized in 2 dimensions.  The code works, but a bit messy (sorry for that).
+This creates interactive plots of BERT word embeddings using PyTorch.  Utilizing UMAP dimension reduction, the high dimension word vectors created with BERT can be visualized in 2 dimensions.
 
 ### Prerequisites
 
