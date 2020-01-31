@@ -23,7 +23,7 @@ def GetEmbeddings(word, layer, filename): # Word is word of choice and layer is 
     #List to store word vectors
     embeddings = []
 
-    #Retrive pretrained model and turn of training
+    #Retrive pretrained model and turn off training
     model = BertModel.from_pretrained('bert-base-uncased')
     model.eval()
     
@@ -39,7 +39,7 @@ def GetEmbeddings(word, layer, filename): # Word is word of choice and layer is 
     #List to store word vectors
     embeddings = []
     
-    #.tsv files version:
+    #takes .tsv files as well
     df = pd.read_csv(filename, delimiter='\t', header=None, names=['sentence_source', 'label', 'label_notes', 'sentence'])
     
     sentences = df.sentence.values
@@ -52,22 +52,22 @@ def GetEmbeddings(word, layer, filename): # Word is word of choice and layer is 
     for i in sentences:
         if " " + word + " " in i:
             
-            #Add special tokens to the input text and tokenize it:
+            #Add special tokens to the input text, then tokenize it:
             markedText = "[CLS] " + i + " [SEP]"
-            tokenizedText = tokenizer.tokenize(markedText)
+            tokenText = tokenizer.tokenize(markedText)
 
             #Which index is the word at?
-            wordIndex = tokenizedText.index(word)
+            wordIndex = tokenText.index(word)
             
             #Match the tokens to the id's in vocab list
-            tokenIds = tokenizer.convert_tokens_to_ids(tokenizedText)
+            ids = tokenizer.convert_tokens_to_ids(tokenText)
             
             #Specify single or two sentence input:
-            segmentIds = [1] * len(tokenizedText)
+            segmentIds = [1] * len(tokenText)
             #print(segmentIds)
             
             #Convert to pytorch tensor for model
-            tokensTensor = torch.tensor([tokenIds])
+            tokensTensor = torch.tensor([ids])
             segmentsTensors = torch.tensor([segmentIds])
             
             
